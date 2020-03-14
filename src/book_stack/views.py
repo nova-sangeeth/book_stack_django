@@ -3,6 +3,11 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Book
+# from .forms import book_form
+
+
+def views(request):
+    return render(request, 'index.html')
 
 
 class booklist(ListView):
