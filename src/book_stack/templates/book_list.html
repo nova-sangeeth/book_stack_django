@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %} 
+    <table class="table" border="1">
+        
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>author</th>
+                <th>publisher</th>
+                <th>pages</th>
+                <th>price</th>
+                <th>view</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in object_list %}
+            <tr>
+                <td>{{ book.name }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.publisher }}</td>
+                <td>{{ book.pages }}</td>
+                <td>{{ book.price }}</td>
+                <td><a href="{% url "book_view" book.id %}">view</a></td>
+                <td><a href="{% url "book_edit" book.id %}">edit</a></td>
+                <td><a href="{% url "book_delete" book.id %}">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url "book_new" %}"></a>
+    
+    {% endblock content %}
+  </body>
+</html>
