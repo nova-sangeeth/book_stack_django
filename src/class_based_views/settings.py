@@ -26,7 +26,7 @@ SECRET_KEY = 'ub*g)6q!_uo2sai7rbgo_$5ufjzln@r6(6mzrs=i-v70*cdfn%'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Application definition
 

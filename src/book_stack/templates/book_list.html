@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,9 +9,9 @@
   </head>
   <body>
     {% block content %} 
-    <table class="table" border="1">
+    <table class="table" border="1" class="table-bordered">
         
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>Name</th>
                 <th>author</th>
@@ -29,15 +31,15 @@
                 <td>{{ book.publisher }}</td>
                 <td>{{ book.pages }}</td>
                 <td>{{ book.price }}</td>
-                <td><a href="{% url "book_view" book.id %}">view</a></td>
-                <td><a href="{% url "book_edit" book.id %}">edit</a></td>
-                <td><a href="{% url "book_delete" book.id %}">delete</a></td>
+                <td><a href="{% url "bookview" book.id %}">View</a></td>
+                <td><a href="{% url "bookupdate" book.id %}">Edit</a></td>
+                <td><a href="{% url "bookdelete" book.id %}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
-    <a href="{% url "book_new" %}"></a>
+    <a href="{% url "bookcreate" %}">Add new Item</a>
     
     {% endblock content %}
   </body>

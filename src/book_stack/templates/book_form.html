@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends 'base.html' %} {% load crispy_forms_tags %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,9 +8,10 @@
   </head>
   <body>
     {% block content %}
-    <form action="" method="POST">
-      {{form.as_p}}
-      <button type="submit">Submit</button>
+    <form method="POST">
+      {% csrf_token %} {{form|crispy}}
+      <br />
+      <a class="btn btn-primary " type="submit" role="button">submit</a>
     </form>
     {% endblock content %}
   </body>

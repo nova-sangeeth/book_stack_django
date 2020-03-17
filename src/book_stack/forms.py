@@ -3,6 +3,6 @@ from .models import Book
 
 
 class book_form(ModelForm):
-    class meta:
+    class Meta:
         model = Book
-        fields = ['name', 'author', 'publisher', 'pages', 'price']
+        fields = "__all__"
