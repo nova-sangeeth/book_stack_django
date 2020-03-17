@@ -29,10 +29,13 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1 class="display-4">Book Store</h1>
-        <p class="lead">
-          This is a CRUD application for a book store
-        </p>
+        <center>
+          <a href="{% url 'booklist' %}" class="display-4">Book Store</a>
+          <p class="lead">
+            This is a CRUD application for a book store
+          </p>
+        </center>
+
         <hr class="my-4" />
 
         {% block content %} {% endblock content %}
