@@ -64,7 +64,7 @@ def bookupdate(request, pk):
     return render(request, 'book_form.html', {"form": form})
 
 
-def bookdelete(requst):
+def bookdelete(request, pk):
     book = get_object_or_404(Book, pk=pk)
     if request.method == "POST":
         book.delete()
